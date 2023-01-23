@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    const Title = () => (
+        <h3 id="title" onMouseEnter={() => console.log("mounse enter")}>
+         Hello I'm a title
+        </h3>
+        );
+    // const h3 = React.createElement("h3", {
+    //     onMouseEnter: () => console.log("mounse enter"),
+    // }, "Hello I'm a span");
+    const Button = () => (
+        <button id="btn" onClick={() => console.log("im clicked")}>
+            Click me
+        </button>
+    );
+    
+    // const btn = React.createElement("button", {
+    //     onClick: () => console.log("im clicked"),
+    // }, "Click me");
+    // const container = React.createElement("div", null, [Title, btn]);
+    const Container = () => ( 
+        <div>
+            <Title/>
+            <Button/>
+            <Title/>
+        </div> 
+    );
+    ReactDOM.render(<Container />, root);
+</script>
+</html>
