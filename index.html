@@ -10,6 +10,7 @@
 </body>
 <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     const rootElement = document.getElementById("root");
@@ -33,15 +34,16 @@
         );
     }
 
-    const MemorizedBtn = React.memo(Btn);
+    Btn.propTypes =
+
 
     function App() {
         const [value, setValue] = React.useState("Save Changes");
         const changeValue = () => setValue("Revert Changes");
         return ( 
             <div>
-               <MemorizedBtn text={value} changeValue={changeValue}/>
-               <MemorizedBtn text="Continue" />
+               <Btn text={value} changeValue={changeValue}/>
+               <Btn text="Continue" />
             </div> 
         );
     }
